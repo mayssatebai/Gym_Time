@@ -18,7 +18,7 @@ public class test {
             System.out.println("Connexion établie");
 
             ste = con.createStatement();
-            String req = "INSERT INTO `Coach` (`id`, `nom`, `prenom`, `email`, `num`) VALUES (NULL, 'test1', 'tes1', 'email', 1265);";
+            String req = "INSERT INTO `Coach` (`id`, `nom`, `prenom`, `email`, `num`) VALUES (NULL, 'mayssa', 'tb', 'm@g.com', 216152);";
             ste.executeUpdate(req);
             System.out.println("Coach ajouté");
 

@@ -2,6 +2,8 @@ package Entity;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Coach")
@@ -15,6 +17,7 @@ public class Coach {
     private String prenom;
     private String email;
     private int num;
+    private static List<Coach> coachList = new ArrayList<>();
 
     public Coach(int id ,String nom, String prenom, String email, int num){
         this.id = id;
@@ -77,5 +80,9 @@ public class Coach {
                 ", email='" + email + '\'' +
                 ", num=" + num +
                 '}';
+    }
+
+    public static void add(Coach coach) {
+        coachList.add(coach);
     }
 }

@@ -9,7 +9,7 @@ public class config {
     private String login = "root";
     private String pwd = "";
     private static config data;
-    private Connection con;
+    private static Connection con;
 
     private config() {
         try {
@@ -21,8 +21,8 @@ public class config {
 
     }
 
-    public Connection getCon() {
-        return this.con;
+    public static Connection getCon() {
+        return con;
     }
 
     public static config getInstance() {

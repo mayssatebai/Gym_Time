@@ -1,0 +1,15 @@
+.side{
+-fx-background-color: #353A56;
+    /*-fx-border-color: #2207bb; */
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+}
+.inner_pane{
+    -fx-background-color: rgba(116, 140, 241, 0.5);;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+}

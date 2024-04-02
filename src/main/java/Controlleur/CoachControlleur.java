@@ -141,14 +141,25 @@ public class CoachControlleur implements Initializable {
     }
     @FXML
     void getData(MouseEvent event) {
-        Coach coach =table.getSelectionModel().getSelectedItem();
-        id=coach.getId();
-        tNom.setText(coach.getNom());
-        tPrenom.setText(coach.getPrenom());
-        tNum.setText(String.valueOf(coach.getNum()));
-        tEmail.setText(coach.getEmail());
-        btnadd.setDisable(true);
+        Coach coach = table.getSelectionModel().getSelectedItem();
+        if (coach != null) {
+            id = coach.getId();
+            tNom.setText(coach.getNom());
+            tPrenom.setText(coach.getPrenom());
+            tNum.setText(String.valueOf(coach.getNum()));
+            tEmail.setText(coach.getEmail());
+            btnadd.setDisable(true);
+        } else {
+            // Gérer le cas où aucun élément n'est sélectionné dans la table
+            // Vous pouvez par exemple effacer les champs de texte ou désactiver les boutons
+            tNom.setText("");
+            tPrenom.setText("");
+            tNum.setText("");
+            tEmail.setText("");
+            btnadd.setDisable(true);
+        }
     }
+
     void clear(){
         tNom.setText(null);
         tPrenom.setText(null);

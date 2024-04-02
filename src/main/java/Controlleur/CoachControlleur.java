@@ -1,9 +1,5 @@
 package Controlleur;
 
-
-
-
-
 import Entity.Coach;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
 import java.net.URL;
@@ -71,6 +68,8 @@ public class CoachControlleur implements Initializable {
     private TableColumn<Coach, Integer> colid;
     @FXML
     private TableView<Coach> table;
+    @FXML
+    private AnchorPane side;
 
     public CoachControlleur() {
     }
@@ -205,8 +204,6 @@ public class CoachControlleur implements Initializable {
         }
 
     }
-
-
 
 }
 

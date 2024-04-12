@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -70,6 +71,8 @@ public class CoachControlleur implements Initializable {
     private TableView<Coach> table;
     @FXML
     private AnchorPane side;
+    @FXML
+    private TextField trecherche;
 
     public CoachControlleur() {
     }
@@ -114,11 +117,9 @@ public class CoachControlleur implements Initializable {
         colEmail.setCellValueFactory(new PropertyValueFactory<Coach,String>("Email"));
 
     }
-
     @FXML
     void clearField(ActionEvent event) {
         clear();
-
     }
 
     @FXML
@@ -204,6 +205,17 @@ public class CoachControlleur implements Initializable {
         }
 
     }
-
+    @FXML
+    void rechercherCoach(KeyEvent event) {
+        String searchTerm = trecherche.getText();
+        ObservableList<Coach> filteredList = getCoachs().filtered(Coach ->
+                        Coach.getNom().toLowerCase().contains(searchTerm.toLowerCase()) ||
+                        Coach.getPrenom().toLowerCase().contains(searchTerm.toLowerCase()) ||
+                        Coach.getEmail().toLowerCase().contains(searchTerm.toLowerCase()) ||
+                        String.valueOf(Coach.getNum()).toLowerCase().contains(searchTerm.toLowerCase()) ||
+                String.valueOf(Coach.getId()).toLowerCase().contains(searchTerm.toLowerCase())
+        );
+        table.setItems(filteredList);
+    }
 }
 

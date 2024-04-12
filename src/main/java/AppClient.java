@@ -4,16 +4,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class App extends Application {
-
+public class AppClient extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-         Parent parent = FXMLLoader.load(getClass().getResource( "/Fxml/Client.fxml"));
-        Scene scene=new Scene(parent);
+        Parent parent = FXMLLoader.load(getClass().getResource("/Fxml/Client.fxml"));
+        Scene scene = new Scene(parent);
         stage.setTitle("GymTime");
         stage.setScene(scene);
         stage.show();
     }
+
     public static void main(String[] args){
         launch();
     }

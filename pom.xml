@@ -39,6 +39,12 @@
             <artifactId>fontawesomefx</artifactId>
             <version>8.9</version>
         </dependency>
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>11.1.0</version> <!-- Mettez à jour la version selon votre besoin -->
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
@@ -57,12 +63,10 @@
                 <version>0.0.8</version>
                 <executions>
                     <execution>
-                        <!-- Default configuration for running with: mvn clean javafx:run -->
+                        <!-- Configuration pour l'exécution de App -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>
-                                App
-                            </mainClass>
+                            <mainClass>App</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
@@ -71,8 +75,23 @@
                             <noHeaderFiles>true</noHeaderFiles>
                         </configuration>
                     </execution>
+                    <!-- Nouvelle configuration pour l'exécution de AppClient -->
+                    <execution>
+                        <id>client-cli</id>
+                        <configuration>
+                            <mainClass>AppClient</mainClass>
+                            <launcher>app-client</launcher>
+                            <jlinkZipName>app-client</jlinkZipName>
+                            <jlinkImageName>app-client</jlinkImageName>
+                            <noManPages>true</noManPages>
+                            <stripDebug>true</stripDebug>
+                            <noHeaderFiles>true</noHeaderFiles>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
+
+
         </plugins>
     </build>
 </project>
